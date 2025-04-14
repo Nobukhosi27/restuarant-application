@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Submit Review</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Restaurant ID</ion-label>
+    <ion-input [(ngModel)]="restaurantId" placeholder="Enter restaurant ID"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Rating (1-5)</ion-label>
+    <ion-select [(ngModel)]="rating">
+      <ion-select-option *ngFor="let r of [1,2,3,4,5]" [value]="r">{{ r }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Review</ion-label>
+    <ion-textarea [(ngModel)]="reviewText" placeholder="Write your review here..."></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" (click)="submitReview()" [disabled]="loading">
+    {{ loading ? 'Submitting...' : 'Submit Review' }}
+  </ion-button>
+</ion-content>

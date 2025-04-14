@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>All Reviews</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let review of reviews">
+    <ion-card-header>
+      <ion-card-title>Restaurant ID: {{ review.restaurantId }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>User ID:</strong> {{ review.userId }}</p>
+      <p><strong>Rating:</strong> {{ review.rating }}/5</p>
+      <p><strong>Comment:</strong> {{ review.review }}</p>
+      <p><strong>Timestamp:</strong> {{ review.timestamp | date:'medium' }}</p>
+      <p><strong>Admin Response:</strong> {{ review.adminResponse || 'No response yet' }}</p>
+
+      <ion-button color="primary" (click)="respondToReview(review.id, 'Your response text here')">
+        Respond
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="reviews.length === 0">
+    <ion-card-content>
+      <p class="text-center">No reviews found.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

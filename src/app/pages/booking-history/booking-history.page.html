@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Booking History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="bookingHistory.length > 0">
+    <ion-card-header>
+      <ion-card-title>Your Booking History</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let booking of bookingHistory">
+          <ion-label>
+            <h2>{{ booking.restaurantName }}</h2>
+            <p>Date: {{ booking.dateTime.toDate() | date: 'yyyy-MM-dd' }} | Time: {{ booking.dateTime.toDate() | date: 'HH:mm' }}</p>
+            <p>Status: <strong>{{ booking.status }}</strong></p>
+          </ion-label>
+          <ion-button color="danger" fill="outline" (click)="cancelBooking(booking.id)">
+            Cancel
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngIf="bookingHistory.length === 0">
+    <ion-card-content>
+      <p class="text-center">No bookings found.</p>
+    </ion-card-content>
+  </ion-card>
+
+  
+  <ion-button expand="full" routerLink="/profile">Back to Profile</ion-button>
+</ion-content>

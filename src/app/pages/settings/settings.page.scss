@@ -1,0 +1,16 @@
+/* Default light theme */
+:root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+    --ion-button-background: #3880ff;
+    --ion-button-text-color: #ffffff;
+  }
+  
+  /* Dark theme */
+  body[color-theme='dark'] {
+    --ion-background-color: #222222;
+    --ion-text-color: #ffffff;
+    --ion-button-background: #ffcc00;
+    --ion-button-text-color: #000000;
+  }
+  

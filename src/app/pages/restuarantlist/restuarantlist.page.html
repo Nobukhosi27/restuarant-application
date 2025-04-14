@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Restaurants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Search Bar -->
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="filterRestaurants()" placeholder="Search Restaurants"></ion-searchbar>
+
+  <!-- Restaurant List -->
+  <ion-list>
+    <ion-item *ngFor="let restaurant of filteredRestaurants">
+      <ion-label>
+        <h2>{{ restaurant.name }}</h2>
+        <p>{{ restaurant.location }}</p>
+        <p><strong>Cuisine:</strong> {{ restaurant.cuisine }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Manage Restaurants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Add New Restaurant</h2>
+
+  <ion-item>
+    <ion-input label="Name" [(ngModel)]="newRestaurant.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Cuisine" [(ngModel)]="newRestaurant.cuisine"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea label="Description" [(ngModel)]="newRestaurant.description"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Location" [(ngModel)]="newRestaurant.location"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Rating"
+      type="number"
+      [(ngModel)]="newRestaurant.rating"
+      min="0"
+      max="5"
+      step="0.1"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="addRestaurant()">Add Restaurant</ion-button>
+
+  <ion-item-divider class="ion-margin-vertical"></ion-item-divider>
+
+  <h2>All Restaurants</h2>
+  <ion-list>
+    <ion-item *ngFor="let r of restaurants">
+      <ion-label>
+        <h3>{{ r.name }}</h3>
+        <p><strong>Cuisine:</strong> {{ r.cuisine }}</p>
+        <p><strong>Description:</strong> {{ r.description }}</p>
+        <p><strong>Location:</strong> {{ r.location }}</p>
+        <p><strong>Rating:</strong> {{ r.rating }}/5</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="warning" (click)="editRestaurant(r)">Edit</ion-button>
+        <ion-button color="danger" (click)="deleteRestaurant(r.id)">Delete</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

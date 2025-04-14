@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>User Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/restuarantlist">Browse</ion-button>
+      <ion-button routerLink="/create-booking">Book</ion-button>
+      <ion-button routerLink="/my-bookings">My Bookings</ion-button>
+      <ion-button routerLink="/booking-history">History</ion-button>
+      <ion-button routerLink="/reviews">Reviews</ion-button>
+      <ion-button routerLink="/settings">Settings</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="image-gallery-wrapper">
+  <div class="image-gallery">
+    <img src="../../../assets/restuarantone.jpg"  />
+    <img src="../../../assets/restuaranttwo.jpg"  />
+    <img src="../../../assets/restuarantthree.jpg" />
+    <img src="../../../assets/restuarantfour.jpg"  />
+    <img src="../../../assets/restuarantfive.jpg"  />
+    <img src="../../../assets/restuarantsix.jpg" />
+    <img src="../../../assets/restuarantseven.jpg"  />
+    <img src="../../../assets/restuaranteight.jpg" />
+  </div>
+</div>
+</ion-content>

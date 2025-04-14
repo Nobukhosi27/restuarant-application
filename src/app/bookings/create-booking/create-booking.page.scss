@@ -1,0 +1,52 @@
+ion-toolbar {
+  --background: #3880ff;
+  --color: #fff;
+  font-weight: 500;
+}
+
+ion-title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.booking-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+}
+
+ion-item {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  --highlight-color-focused: #3880ff;
+  --min-height: 60px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+ion-label {
+  font-weight: 500;
+  color: #444;
+}
+
+ion-input,
+ion-datetime {
+  font-size: 15px;
+}
+
+
+ion-button {
+  margin-top: 20px;
+  border-radius: 10px;
+  --box-shadow: 0 4px 12px rgba(56, 128, 255, 0.3);
+  font-weight: 600;
+}

@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>My Bookings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="!loading && bookings.length > 0">
+    <ion-item *ngFor="let booking of bookings">
+      <ion-label>
+        <h2>{{ booking.restaurantName }}</h2>
+        <p>Date: {{ booking.dateTime.toDate() | date: 'fullDate' }}</p>
+        <p>Time: {{ booking.dateTime.toDate() | date: 'shortTime' }}</p>
+        <p>Guests: {{ booking.guests }}</p>
+        <p>Status: <strong [ngClass]="{
+          'text-success': booking.status === 'confirmed',
+          'text-warning': booking.status === 'pending',
+          'text-danger': booking.status === 'canceled'
+        }">{{ booking.status | uppercase }}</strong></p>
+      </ion-label>
+      <ion-button color="danger" (click)="cancelBooking(booking.id)">Cancel</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="loading" class="loading-container">
+    <p>Loading bookings...</p>
+  </div>
+
+  <div *ngIf="!loading && bookings.length === 0" class="no-bookings">
+    <p>You have no bookings yet.</p>
+  </div>
+</ion-content>

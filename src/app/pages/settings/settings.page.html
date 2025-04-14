@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Notification Preferences</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Enable Notifications</ion-label>
+        <ion-toggle [(ngModel)]="settings.notificationsEnabled"></ion-toggle>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Theme</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Light Theme</ion-label>
+        <ion-radio-group [(ngModel)]="settings.theme" (ionChange)="changeTheme()">
+          <ion-item>
+            <ion-label>Light</ion-label>
+            <ion-radio value="light"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dark</ion-label>
+            <ion-radio value="dark"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="updateSettings()">Save Settings</ion-button>
+</ion-content>

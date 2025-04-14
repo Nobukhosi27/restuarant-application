@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Admin Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-item *ngIf="user?.role === 'admin'" routerLink="/admin-dashboard">
+    Admin Dashboard
+  </ion-item>
+
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/manage-bookings">Manage Bookings</ion-button>
+      <ion-button routerLink="/manage-restuarants">Manage Restuarants</ion-button>
+      <ion-button routerLink="/admin-reviews">Reviews</ion-button>
+      <ion-button routerLink="/settings">Settings</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="image-gallery-wrapper">
+    <div class="image-gallery">
+      <img src="../../../assets/restuarantone.jpg"  />
+      <img src="../../../assets/restuaranttwo.jpg"  />
+      <img src="../../../assets/restuarantthree.jpg" />
+      <img src="../../../assets/restuarantfour.jpg"  />
+      <img src="../../../assets/restuarantfive.jpg"  />
+      <img src="../../../assets/restuarantsix.jpg" />
+      <img src="../../../assets/restuarantseven.jpg"  />
+      <img src="../../../assets/restuaranteight.jpg" />
+    </div>
+  </div>
+
+</ion-content>
+
+
+
+
+
